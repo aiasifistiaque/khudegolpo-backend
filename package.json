@@ -1,0 +1,41 @@
+{
+	"name": "backend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"server": "nodemon server.js",
+		"start": "node server.js"
+	},
+	"author": "ai",
+	"license": "ISC",
+	"dependencies": {
+		"aws-sdk": "^2.1015.0",
+		"axios": "^0.24.0",
+		"bcrypt": "^5.0.1",
+		"colors": "^1.4.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"expo-server-sdk": "^3.6.0",
+		"express": "^4.17.1",
+		"express-async-handler": "^1.1.4",
+		"express-session": "^1.17.2",
+		"joi": "^17.4.2",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.21",
+		"mongoose": "^6.0.5",
+		"morgan": "^1.10.0",
+		"multer": "^1.4.3",
+		"nodemailer": "^6.7.1",
+		"otp-generator": "^2.0.1",
+		"passport": "^0.5.0",
+		"passport-facebook": "^3.0.0",
+		"passport-google-oauth": "^2.0.0",
+		"passport-google-oauth20": "^2.0.0",
+		"path": "^0.12.7",
+		"swagger-jsdoc": "^6.1.0",
+		"swagger-ui-express": "^4.1.6"
+	}
+}
