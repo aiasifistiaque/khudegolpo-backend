@@ -39,7 +39,7 @@ const withdrawRequest = asyncHandler(async (req, res) => {
 
 			generateNotification({
 				user,
-				details: `Your withdraw request of ${amount} NGN was received`,
+				details: `Your withdraw request of ${amount} BDT was received`,
 				type: 'withdraw',
 				target: newWithdraw._id,
 				image: '/icon.png',

@@ -42,7 +42,7 @@ export default router;
  *         description: Array of Books
  *         example: [{ "_id": "617a8d08f563e91682368649",
  *                      "title": "The Babysitter",
- *                      "image": "https://arewabooks.s3.us-east-2.amazonaws.com/1635421432278_The_Babysitter_%282017_film%29.png",
+ *                      "image": "https://Khude Golpo.s3.us-east-2.amazonaws.com/1635421432278_The_Babysitter_%282017_film%29.png",
  *                      "chapters": [
  *                          "61815f9bfce3cef31ab8609b",
  *                          "61815fddfce3cef31ab860c8"

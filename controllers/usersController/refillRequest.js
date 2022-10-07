@@ -29,8 +29,8 @@ const refillRequest = asyncHandler(async (req, res) => {
 
 		const details =
 			type == 'paystack'
-				? `Your account was successfully refilled with ${amount} NGN`
-				: `Your account refill request for ${amount} NGN was received`;
+				? `Your account was successfully refilled with ${amount} BDT`
+				: `Your account refill request for ${amount} BDT was received`;
 
 		generateNotification({
 			user,

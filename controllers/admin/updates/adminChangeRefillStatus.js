@@ -36,7 +36,7 @@ const adminChangeRefillStatus = asyncHandler(async (req, res) => {
 			await user.save();
 			generateNotification({
 				user: user._id,
-				details: `Your account has been successfully refilled with ${item.amount} NGN. Transaction id for this transaction: ${item._id}, fund received through ${item.type} transfer from ${item.target}.`,
+				details: `Your account has been successfully refilled with ${item.amount} BDT. Transaction id for this transaction: ${item._id}, fund received through ${item.type} transfer from ${item.target}.`,
 				image: '/icon.png',
 				type: 'refill',
 				target: item._id,

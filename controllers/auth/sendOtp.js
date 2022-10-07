@@ -34,7 +34,7 @@ const sendOtp = asyncHandler(async (req, res) => {
 });
 
 const sendOtpToMail = (user, otp) => {
-	const from = `Arewa Books <${process.env.MAIL_ADDRESS}>`;
+	const from = `Khudegolpo <${process.env.MAIL_ADDRESS}>`;
 
 	try {
 		var transporter = nodemailer.createTransport({
@@ -54,7 +54,7 @@ const sendOtpToMail = (user, otp) => {
 			text: 'Password Reset Request',
 			html: `<div>
 					<h4 style="margin:0px;font-weight:400;">Hi, ${user.username}</h4>
-                    <h5 style="margin-bottom:1px">We received a request to reset your Arewa Books account password.</h5>
+                    <h5 style="margin-bottom:1px">We received a request to reset your Khudegolpo account password.</h5>
                     <h5 style="margin-bottom:5px">Enter the following password reset code:</h5>
                     <h2>${otp}</h2>
                     <hr/>

@@ -78,7 +78,7 @@ const unlockChapter = asyncHandler(async (req, res) => {
 
 					generateNotification({
 						user: author._id,
-						details: `${buyer.username} purchased Chapter: ${chapter.title} for ${chapter.price} NGN of your book ${book.title}`,
+						details: `${buyer.username} purchased Chapter: ${chapter.title} for ${chapter.price} BDT of your book ${book.title}`,
 						type: 'unlock',
 						target: chapter._id,
 						image: buyer.image,
