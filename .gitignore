@@ -7,6 +7,9 @@ env
 
 /env
 
+/from
+/images
+
 # local env files
 .env.local
 .env.development.local

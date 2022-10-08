@@ -21,7 +21,7 @@ const editBook = asyncHandler(async (req, res) => {
 		const book = await Book.findById(id);
 
 		if (book) {
-			if (book.author != user) {
+			if (book.author != user && req.user.role != 'admin') {
 				return res.status(401).json({
 					status: 'error',
 					message: 'Access Denied. You are not allowerd to perform this action',
