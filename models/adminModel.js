@@ -58,6 +58,36 @@ const adminSchema = new mongoose.Schema(
 			ref: 'Book',
 			default: '619380b890bd280f8fd4cd29',
 		},
+		bookOne: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
+		bookTwo: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
+		bookThree: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
+		bookFour: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
+		bookFive: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
+		bookSix: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Book',
+			default: '61e5155fd366e8fd59f9b8ec',
+		},
 	},
 	{
 		timestamps: true,

@@ -6,7 +6,9 @@ import Admin from '../../models/adminModel.js';
 
 const adminInfo = asyncHandler(async (req, res) => {
 	try {
-		const data = await Admin.findOne();
+		const data = await Admin.findOne().populate(
+			'bookOne bookTwo bookThree bookFour bookFive bookSix'
+		);
 		const books = await Book.countDocuments();
 		const users = await User.countDocuments();
 		const chapters = await Chapter.countDocuments();

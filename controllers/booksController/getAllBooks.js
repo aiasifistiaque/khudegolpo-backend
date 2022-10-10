@@ -1,6 +1,7 @@
 import Book from '../../models/bookModel.js';
 import asyncHandler from 'express-async-handler';
 import { books } from '../../constants.js';
+import { User } from '../../models/userModel.js';
 
 const getAllBooks = asyncHandler(async (req, res) => {
 	//const { sort, page, perPage } = req.body;
@@ -40,6 +41,31 @@ const getAllBooks = asyncHandler(async (req, res) => {
 	}
 
 	try {
+		if (req.query.search) {
+			const count = await Book.countDocuments({
+				status: 'published',
+				...genre,
+			});
+			const totalPages = Math.ceil(count / perPage);
+			const books = await Book.find({ status: 'published', ...genre })
+				.select('_id title image createdAt author')
+				.populate({ path: 'author', select: '_id name username' })
+				.skip(page * perPage)
+				.limit(5);
+
+			const users = await User.find({
+				$or: [
+					{ name: { $regex: req.query.search, $options: 'i' } },
+					{ username: { $regex: req.query.search, $options: 'i' } },
+				],
+			})
+				.select('name image username')
+				.limit(5);
+
+			return res
+				.status(200)
+				.json({ books, count, perPage: 5, page: page + 1, totalPages, users });
+		}
 		const count = await Book.countDocuments({ status: 'published', ...genre });
 		const totalPages = Math.ceil(count / perPage);
 		const books = await Book.find({ status: 'published', ...genre })
@@ -48,7 +74,10 @@ const getAllBooks = asyncHandler(async (req, res) => {
 			.sort(sort)
 			.skip(page * perPage)
 			.limit(perPage);
-		res.status(200).json({ books, count, perPage, page: page + 1, totalPages });
+
+		return res
+			.status(200)
+			.json({ books, count, perPage, page: page + 1, totalPages });
 	} catch (e) {
 		console.log(e);
 		return res.status(500).json({ message: 'There was an error' });
